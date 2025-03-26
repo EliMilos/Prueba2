@@ -1,17 +1,34 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Probando GIT");
-
-
-int num1, num2;
-num1 = 0;
-num2 = 2;
-
-int suma;
-
-if (num1 > num2)
+class Persona
 {
-    suma = num1 + num2;
-}
+    public int edad; 
+    public string name;
 
-Console.WriteLine("Suma " + suma);
+    public Persona()
+    {
+    }
+
+    public Persona(int edad, string name)
+    {
+        this.edad = edad;
+        this.name = name;
+    }
+
+    public void Saludar()
+    {
+        Console.WriteLine($"Hola, mi nombre es {name} y tengo {edad} años.");
+    }
+
+}
+class Program
+{
+    static void Main()
+    {
+        Persona persona1 = new Persona(25, "Adrian");
+        persona1.Saludar();
+    }
+}
